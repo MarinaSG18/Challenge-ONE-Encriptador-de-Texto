@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Encriptador y Desencriptador de Texto</title>
+        <link rel="stylesheet" href="sources/reset.css" />
+        <link rel="stylesheet" href="sources/style.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <main>
+            <div class="caja">
+                <h1>
+                    <img
+                        class="logo"
+                        src="sources/imagenes/Logo.png"
+                        alt="Logo de Alura"
+                    />
+                </h1>
+            </div>
+            <div class="seccion-izquierda">
+                <div class="caja-entrada">
+                    <textarea
+                        id="mensajeEntrada"
+                        class="mensajeEntrada"
+                        placeholder="Ingrese el texto aqui"
+                    ></textarea>
+                    <br />
+                    <img
+                        class="img-signo"
+                        src="sources/imagenes/bi_exclamation-circle-fill.png"
+                    />
+                    <label class="mensajeAdvertencia">
+                        Solo letras minúsculas y sin acento.
+                    </label>
+                </div>
+                <div class="caja-botones">
+                    <button
+                        id="botonEncriptar"
+                        class="botonEncriptar"
+                        type="submit"
+                    >
+                        Encriptar
+                    </button>
+                    <button
+                        id="botonDesencriptar"
+                        class="botonDesencriptar"
+                        type="submit"
+                    >
+                        Desencriptar
+                    </button>
+                </div>
+            </div>
+
+            <div class="seccion-derecha">
+                <div id="caja-imagen" class="caja-imagen">
+                    <img
+                        id="imagen-decorativa"
+                        class="imagen-decorativa"
+                        src="sources/imagenes/Muñeco.png"
+                        alt="Imagen decorativa"
+                    />
+                    <p class="firsth-mg">Ningún mensaje fue encontrado</p>
+                    <p class="second-mg">
+                        Ingresa el texto que desees encriptar o desencriptar.
+                    </p>
+                </div>
+
+                <div id="caja-texto" class="caja-texto">
+                    <textarea
+                        id="textoEncotrado"
+                        class="textoEncotrado"
+                        readonly
+                    ></textarea>
+                </div>
+                <div id="caja-boton" class="caja-boton">
+                    <button id="botonCopiar" class="botonCopiar" type="button">
+                        Copiar
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer>Autora - Marina Santiago - Encriptador de texto</footer>
+        <script src="sources/javascript.js"></script>
+    </body>
+</html>
