@@ -1,4 +1,4 @@
-# Challenge-ONE-Encriptador
+# Challenge-ONE-Encriptador de Texto
 
 Este proyecto consiste en una página web que permite encriptar y desencriptar un mensaje dado.
 
