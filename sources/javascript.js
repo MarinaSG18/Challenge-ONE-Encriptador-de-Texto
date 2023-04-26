@@ -1,10 +1,7 @@
-
-const regexEn_First = /a/g; const regexEn_Second = /e/g; const regexEn_Thirth = /i/g; const regexEn_Forth = /o/g; const regexEn_Fifth = /u/g;
-const regexDe_First = /ai/gm; const regexDe_Second = /enter/gm; const regexDe_Thirth = /imes/gm; const regexDe_Forth = /ober/gm; const regexDe_Fifth = /ufat/gm;
-
 var btnEncriptar = document.getElementById("botonEncriptar");
 var btnDesencriptar = document.getElementById("botonDesencriptar");
 var nuevoTexto = document.getElementById("textoEncotrado");
+var mensaje = document.getElementById("mensajeEntrada");
 
 let nuevaCadena = "";
 let cadenaOriginal = "";
@@ -15,57 +12,42 @@ function habilitar() {
     document.getElementById("caja-boton").style.display = "inline";
 }
 
-function obtenerTexto() {
-    let texto = document.getElementById("mensajeEntrada").value;   
-    return texto;
-}
-
 function cambiarTexto() {
     
-    let texto = obtenerTexto();
+    let texto = mensaje.value;
     
     if (texto == "") {
         alert("Ingresa algun mensaje");
     }
     else {
-  
-        nuevaCadena = [].map.call(texto, function e(n) {
+        const encriptar = { 'a':'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' };
+        let regex = /[aeiou]/gm;
+        nuevaCadena = [].map.call(texto, function cambio(letra) {
 
-            if (n == 'a') { return n.replace(regexEn_First, "ai"); }
+            letra = letra.replace(regex, function(vocal) { return encriptar[vocal] });
+            return letra;
 
-            if (n == 'e') { return n.replace(regexEn_Second, "enter"); }  
-            
-            if (n == 'i') { return n.replace(regexEn_Thirth, "imes"); }
-
-            if (n == 'o') { return n.replace(regexEn_Forth, "ober"); }
-            
-            if (n == 'u') { return n.replace(regexEn_Fifth,"ufat"); }
-
-            return n
-    
         }).join("");
+
         nuevoTexto.innerHTML = nuevaCadena;
         document.getElementById("mensajeEntrada").value = "";
-        habilitar();
-        
+        habilitar(); 
     }
 }
 
 function textOriginal() {
-
-    let textoEncriptado = obtenerTexto();
+    const desencriptar = { 'ai': 'a', 'enter': 'e', 'imes': 'i', 'ober': 'o', 'ufat': 'u' };
+    let regex = /(ai)|(enter)|(imes)|(ober)|(ufat)/gm;
+    let textoEncriptado = mensaje.value;
     if (textoEncriptado == "") {
         alert("Ingresa algún mensaje");
     }
     else {
-
-        cadenaOriginal = textoEncriptado.replace(regexDe_First, "a").replace(regexDe_Second, "e").replace(regexDe_Thirth, "i").replace(regexDe_Forth, "o").replace(regexDe_Fifth, "u");
+        cadenaOriginal = textoEncriptado.replace(regex, function(nVocal) { return desencriptar[nVocal] });
         nuevoTexto.innerHTML = cadenaOriginal;
         document.getElementById("mensajeEntrada").value = "";
-        habilitar();
-        
-    }
-    
+        habilitar();   
+    }  
 }
 
 function copiar() {
@@ -74,14 +56,20 @@ function copiar() {
     document.execCommand("copy");
 }
 
-function verificarEntrada(e) {
-	if(e.key.match(/[a-z\s]/gm)===null) { e.preventDefault(); }
+function eliminarDiacriticos(cadena) {
+    return cadena.normalize('NFD').replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1").normalize();
 }
-  
+
+function modificarTexto() {
+    mensaje.value = mensaje.value.toLowerCase();
+    mensaje.value = eliminarDiacriticos(mensaje.value);
+}
+
 document.querySelector("#botonCopiar").addEventListener("click", copiar);
 
-document.getElementById("mensajeEntrada").addEventListener("keydown",verificarEntrada);
+mensaje.onkeyup = modificarTexto;
 
 btnEncriptar.onclick = cambiarTexto;
 
 btnDesencriptar.onclick = textOriginal;
+

@@ -1,15 +1,14 @@
-
-body{
-    background: #F3F5FC;
-    font-family: 'Inter', sans-serif;
+body {
+    background: #f3f5fc;
+    font-family: "Inter", sans-serif;
 }
 
-.caja{
+.caja {
     position: absolute;
     top: 50px;
 }
 
-.seccion-izquierda{
+.seccion-izquierda {
     width: 1000px;
     margin-top: 110px;
     margin-left: 150px;
@@ -17,65 +16,71 @@ body{
     vertical-align: bottom;
 }
 
-textarea{
+textarea {
     resize: none;
     border: none;
-    background: none; 
+    background: none;
 }
 
-.mensajeEntrada{
-    font-family: 'Inter', sans-serif;
+.mensajeEntrada {
+    font-family: "Inter", sans-serif;
     width: 870px;
     height: 450px;
     font-size: 32px;
     font-weight: 700;
     outline: none;
-    color: #0A3871;
+    color: #0a3871;
 }
 
-.mensajeEntrada::placeholder{
-    color: #0A3871;
-    font-family: 'Inter', sans-serif;
+.mensajeEntrada::placeholder {
+    color: #0a3871;
+    font-family: "Inter", sans-serif;
 }
 
-.mensajeAdvertencia{
-    font-family: 'Inter', sans-serif;
+.mensajeAdvertencia {
+    font-family: "Inter", sans-serif;
     font-size: 14px;
     color: #495057;
     display: inline-block;
     vertical-align: top;
 }
 
-.botonEncriptar, .botonDesencriptar, .botonCopiar{
-    font-family: 'Inter', sans-serif;
+.botonEncriptar,
+.botonDesencriptar,
+.botonCopiar {
+    font-family: "Inter", sans-serif;
     width: 300px;
     height: 70px;
     border-radius: 25px;
-    border: 1px solid #0A3871;
+    border: 1px solid #0a3871;
     font-size: 19px;
     cursor: pointer;
-    transition: 0.2s all;  
+    transition: 0.2s all;
 }
-.botonEncriptar:hover, .botonDesencriptar:hover, .botonCopiar:hover{
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+.botonEncriptar:hover,
+.botonDesencriptar:hover,
+.botonCopiar:hover {
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
 }
 
-.botonCopiar:active, .botonEncriptar:active, .botonDesencriptar:active{
+.botonCopiar:active,
+.botonEncriptar:active,
+.botonDesencriptar:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
-.botonEncriptar{
+.botonEncriptar {
     background: #052051;
     color: #ffffff;
-    margin:  10px 30px 10px 30px;
+    margin: 10px 30px 10px 30px;
 }
 
-.botonDesencriptar{
-    margin:  10px 30px 10px 30px;   
-    color: #0A3871;
+.botonDesencriptar {
+    margin: 10px 30px 10px 30px;
+    color: #0a3871;
 }
 
-.seccion-derecha{
+.seccion-derecha {
     width: 350px;
     height: 700px;
     vertical-align: top;
@@ -84,33 +89,30 @@ textarea{
     border-radius: 32px;
     margin-top: 20px;
     user-select: none;
-    
 }
 
-.caja-imagen{
-
+.caja-imagen {
     margin: 150px 0;
-
 }
 
-.imagen-decorativa{
+.imagen-decorativa {
     width: 90%;
     margin: 0 5%;
 }
 
-.firsth-mg{
-    font-family: 'Inter', sans-serif;
+.firsth-mg {
+    font-family: "Inter", sans-serif;
     width: 90%;
     font-weight: bold;
     text-align: center;
     font-size: 22px;
-    color: #343A40;
+    color: #343a40;
     padding: 5px;
     margin-top: 20px;
 }
 
-.second-mg{
-    font-family: 'Inter', sans-serif;
+.second-mg {
+    font-family: "Inter", sans-serif;
     width: 90%;
     text-align: center;
     font-size: 14px;
@@ -119,34 +121,34 @@ textarea{
     margin-top: 10px;
 }
 
-.caja-texto{
-    display: none; 
+.caja-texto {
+    display: none;
 }
-.textoEncotrado{
-    font-family: 'Inter', sans-serif;
+.textoEncotrado {
+    font-family: "Inter", sans-serif;
     height: 550px;
     width: 87%;
     font-size: 24px;
     font-weight: 550;
     margin: 30px auto;
     line-height: 120%;
-    color:#0A3871; 
+    color: #0a3871;
     display: block;
     outline: none;
 }
 
-.caja-boton{
+.caja-boton {
     display: none;
 }
 
-.botonCopiar{
-   margin: 10px auto;
-   color: #0A3871;
-   display: block;
+.botonCopiar {
+    margin: 10px auto;
+    color: #0a3871;
+    display: block;
 }
 
-footer{
+footer {
     text-align: center;
-    margin-top: 1.2em;
-    font-size: .7em ;
+    margin-top: 2em;
+    font-size: 0.7em;
 }
