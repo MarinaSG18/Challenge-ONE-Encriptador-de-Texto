@@ -3,6 +3,10 @@ body {
     font-family: "Inter", sans-serif;
 }
 
+.seccion-principal {
+    display: inline-block;
+}
+
 .caja {
     position: absolute;
     top: 50px;
@@ -151,4 +155,89 @@ footer {
     text-align: center;
     margin-top: 2em;
     font-size: 0.7em;
+}
+
+@media screen and (max-width: 1200px) {
+    .seccion-principal {
+        display: flex;
+        flex-direction: column;
+    }
+    .caja {
+        top: 50px;
+    }
+    .seccion-izquierda {
+        width: 100%;
+        height: 80%;
+        margin: 150px 60px 15px 10px;
+    }
+    .caja-entrada {
+        margin-left: 50px;
+    }
+    .mensajeEntrada {
+        width: 95%;
+    }
+    .caja-botones {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .botonDesencriptar,
+    .botonEncriptar {
+        width: 50%;
+    }
+    .seccion-derecha {
+        width: 95%;
+        height: auto;
+        margin: 30px auto;
+    }
+    .textoEncotrado {
+        height: auto;
+    }
+
+    .caja-imagen {
+        margin: 10px auto;
+    }
+    .firsth-mg,
+    .second-mg {
+        margin: 20px auto;
+    }
+
+    .imagen-decorativa {
+        display: none;
+    }
+    .botonCopiar {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .caja {
+        top: 5px;
+        left: -50px;
+    }
+    .seccion-izquierda {
+        margin: 110px 15px 15px 5px;
+    }
+    .caja-entrada {
+        margin-left: 5px;
+    }
+
+    .caja-botones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .botonDesencriptar,
+    .botonEncriptar {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .seccion-derecha {
+        margin-left: 15px;
+    }
+    .firsth-mg,
+    .second-mg {
+        width: 80%;
+        margin: 10px auto;
+    }
 }
