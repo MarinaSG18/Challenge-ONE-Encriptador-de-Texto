@@ -284,10 +284,11 @@ footer p {
         width: 12%;
     }
     .seccion-izquierda {
-        margin: 70px 15px 15px 5px;
+        margin: 70px 15px 15px auto;
     }
     .caja-entrada {
         margin-left: 15px;
+        padding-left: 10px;
         margin-right: 15px;
     }
     .mensajeEntrada {
