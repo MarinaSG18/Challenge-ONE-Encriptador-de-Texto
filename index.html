@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Encriptador y Desencriptador de Texto</title>
         <link rel="stylesheet" href="sources/reset.css" />
         <link rel="stylesheet" href="sources/style.css" />
@@ -12,11 +12,19 @@
         />
     </head>
     <body>
+        <div class="toastr" id="toastr">
+            <img
+                class="img-exclamation"
+                src="sources/imagenes/advertencia.png"
+                alt="Signo de exclamación"
+            />
+            <span> Ingresa algún mensaje</span>
+        </div>
         <div class="caja">
             <h1>
                 <img
                     class="logo"
-                    src="sources/imagenes/Logo.png"
+                    src="sources/imagenes/logo.jpg"
                     alt="Logo de Alura"
                 />
             </h1>
@@ -27,12 +35,13 @@
                     <textarea
                         id="mensajeEntrada"
                         class="mensajeEntrada"
-                        placeholder="Ingrese el texto aqui"
+                        placeholder="Ingrese el texto aquí"
                     ></textarea>
                     <br />
                     <img
                         class="img-signo"
-                        src="sources/imagenes/bi_exclamation-circle-fill.png"
+                        src="sources/imagenes/exclamation.png"
+                        alt="Signo de exclamación 2"
                     />
                     <label class="mensajeAdvertencia">
                         Solo letras minúsculas y sin acento.
@@ -85,7 +94,32 @@
             </div>
         </div>
 
-        <footer>Marina Santiago Garcia - Encriptador de texto</footer>
+        <footer>
+            <div class="info">
+                <p>2023 Encriptador de texto</p>
+                <p>Marina Santiago Garcia</p>
+            </div>
+            <div class="link-contacto">
+                <a href="https://github.com/MarinaSG18">
+                    <img
+                        class="img-github"
+                        width="30px"
+                        height="30px"
+                        src="sources/imagenes/github.png"
+                        alt="Logo de Github"
+                /></a>
+                <a
+                    href="https://www.linkedin.com/in/marina-santiago-garc%C3%ADa/"
+                >
+                    <img
+                        class="img-linkedin"
+                        width="30px"
+                        height="30px"
+                        src="sources/imagenes/linkedin.png"
+                        alt="Logo de Linkedin"
+                /></a>
+            </div>
+        </footer>
         <script src="sources/javascript.js"></script>
     </body>
 </html>

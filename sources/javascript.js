@@ -6,6 +6,18 @@ var mensaje = document.getElementById("mensajeEntrada");
 let nuevaCadena = "";
 let cadenaOriginal = "";
 
+const toastr = document.querySelector("#toastr");
+
+function openToaster(){
+    toastr.style.display = "flex";
+    closeToaster();
+}
+function closeToaster() {
+    setTimeout(function(){
+        toastr.style.display = "none";
+    }, 3500)
+}
+
 function habilitar() {
     document.getElementById("caja-imagen").style.display = "none";
     document.getElementById("caja-texto").style.display = "inline";
@@ -17,7 +29,8 @@ function cambiarTexto() {
     let texto = mensaje.value;
     
     if (texto == "") {
-        alert("Ingresa algun mensaje");
+        //alert("Ingresa algun mensaje");
+        openToaster();
     }
     else {
         const encriptar = { 'a':'ai', 'e': 'enter', 'i': 'imes', 'o': 'ober', 'u': 'ufat' };
@@ -40,7 +53,8 @@ function textOriginal() {
     let regex = /(ai)|(enter)|(imes)|(ober)|(ufat)/gm;
     let textoEncriptado = mensaje.value;
     if (textoEncriptado == "") {
-        alert("Ingresa algún mensaje");
+        //alert("Ingresa algún mensaje");
+        openToaster();
     }
     else {
         cadenaOriginal = textoEncriptado.replace(regex, function(nVocal) { return desencriptar[nVocal] });

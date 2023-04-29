@@ -1,6 +1,27 @@
 body {
-    background: #f3f5fc;
+    background: #65b8a6;
     font-family: "Inter", sans-serif;
+}
+
+.toastr {
+    font-family: "Inter", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    display: none;
+    position: absolute;
+
+    background: rgb(248, 212, 113);
+    width: 250px;
+    height: 20px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    top: 60px;
+    left: 150px;
+    border: 1px solid rgb(250, 190, 80);
+    color: rgb(187, 123, 4);
+}
+.img-exclamation {
+    padding-right: 7px;
 }
 
 .seccion-principal {
@@ -10,8 +31,12 @@ body {
 .caja {
     position: absolute;
     top: 50px;
+    left: 70px;
 }
 
+.logo {
+    width: 15%;
+}
 .seccion-izquierda {
     width: 1000px;
     margin-top: 110px;
@@ -33,12 +58,17 @@ textarea {
     font-size: 32px;
     font-weight: 700;
     outline: none;
-    color: #0a3871;
+    color: #1f192f;
 }
 
 .mensajeEntrada::placeholder {
-    color: #0a3871;
+    color: #1f192f;
     font-family: "Inter", sans-serif;
+    font-weight: 100;
+}
+
+.img-signo {
+    height: 17px;
 }
 
 .mensajeAdvertencia {
@@ -56,43 +86,46 @@ textarea {
     width: 300px;
     height: 70px;
     border-radius: 25px;
-    border: 1px solid #0a3871;
-    font-size: 19px;
+    border: 1px solid #2d6073;
+    font-size: 22px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.2s all;
 }
 .botonEncriptar:hover,
 .botonDesencriptar:hover,
 .botonCopiar:hover {
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.28);
 }
 
 .botonCopiar:active,
 .botonEncriptar:active,
 .botonDesencriptar:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 .botonEncriptar {
-    background: #052051;
+    background: #1f192f;
     color: #ffffff;
     margin: 10px 30px 10px 30px;
 }
 
 .botonDesencriptar {
     margin: 10px 30px 10px 30px;
-    color: #0a3871;
+    color: #2d6073;
+    background: #b5e8c3;
 }
 
 .seccion-derecha {
     width: 350px;
     height: 700px;
     vertical-align: top;
-    background: #ffffff;
+    background: #f0f7da;
     display: inline-block;
     border-radius: 32px;
     margin-top: 20px;
     user-select: none;
+    box-shadow: 0px 32px 32px -8px rgba(0, 0, 0, 0.28);
 }
 
 .caja-imagen {
@@ -136,7 +169,7 @@ textarea {
     font-weight: 550;
     margin: 30px auto;
     line-height: 120%;
-    color: #0a3871;
+    color: #1f192f;
     display: block;
     outline: none;
 }
@@ -147,23 +180,42 @@ textarea {
 
 .botonCopiar {
     margin: 10px auto;
-    color: #0a3871;
+    color: #2d6073;
     display: block;
+    background: #b5e8c3;
 }
 
 footer {
     text-align: center;
+    background: #1f192f;
+    padding: 30px;
     margin-top: 2em;
+    vertical-align: baseline;
+    color: #ffffff;
     font-size: 0.7em;
 }
 
+footer p {
+    padding: 5px;
+}
+
+.img-github,
+.img-linkedin {
+    padding: 5px;
+    margin: 5px 10px;
+}
+
 @media screen and (max-width: 1200px) {
+    .toastr {
+        right: 10px;
+    }
     .seccion-principal {
         display: flex;
         flex-direction: column;
     }
     .caja {
         top: 50px;
+        left: 60px;
     }
     .seccion-izquierda {
         width: 100%;
@@ -191,7 +243,7 @@ footer {
         margin: 30px auto;
     }
     .textoEncotrado {
-        height: auto;
+        height: 8em;
     }
 
     .caja-imagen {
@@ -211,33 +263,57 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    .toastr {
+        font-size: 16px;
+        top: 5px;
+        right: 5px;
+        width: 50%;
+        height: 13px;
+        text-align: center;
+    }
+
     .caja {
         top: 5px;
-        left: -50px;
+        left: 5px;
+    }
+    .logo {
+        width: 12%;
     }
     .seccion-izquierda {
-        margin: 110px 15px 15px 5px;
+        margin: 70px 15px 15px 5px;
     }
     .caja-entrada {
-        margin-left: 5px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    .mensajeEntrada {
+        font-size: 24px;
+        height: 10em;
     }
 
     .caja-botones {
-        display: flex;
         flex-direction: column;
-        align-items: center;
     }
     .botonDesencriptar,
     .botonEncriptar {
         width: 90%;
+        height: 50px;
         margin: 10px auto;
     }
     .seccion-derecha {
-        margin-left: 15px;
+        width: 92%;
+        margin: 5px auto;
     }
+    .textoEncotrado {
+        margin: 10px auto;
+    }
+
     .firsth-mg,
     .second-mg {
         width: 80%;
         margin: 10px auto;
+    }
+    .botonCopiar {
+        height: 50px;
     }
 }
